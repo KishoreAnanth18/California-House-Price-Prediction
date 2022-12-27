@@ -43,3 +43,5 @@
 4. Now deploy the project into the server.
 
 Congratulations🎉 website hosted successfully!
+
+[Hosted website](https://california-house-price-prediction.onrender.com/)
