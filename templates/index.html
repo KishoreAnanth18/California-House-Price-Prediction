@@ -1,68 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>California house price prediction website</title>
+
+    <!-- add favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static',filename='img/favicon.png') }}"
+    />
+
+    <!-- add css styling -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static',filename='css/mquery.css') }}"
+    />
+
+    <!-- fontawesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <h1>California House Price Prediction</h1>
-    <form action="{{url_for('predict')}}" method="post">
-      <input
-        type="text"
-        name="MedInc"
-        placeholder="MedInc"
-        required="required"
-      /><br />
-      <input
-        type="text"
-        name="HouseAge"
-        placeholder="HouseAge"
-        required="required"
-      /><br />
-      <input
-        type="text"
-        name="AveRooms"
-        placeholder="AveRooms"
-        required="required"
-      /><br />
-      <input
-        type="text"
-        name="AveBedrms"
-        placeholder="AveBedrms"
-        required="required"
-      /><br />
-      <input
-        type="text"
-        name="Population"
-        placeholder="Population"
-        required="required"
-      /><br />
-      <input
-        type="text"
-        name="AveOccup"
-        placeholder="AveOccup"
-        required="required"
-      /><br />
-      <input
-        type="text"
-        name="Latitude"
-        placeholder="Latitude"
-        required="required"
-      /><br />
-      <input
-        type="text"
-        name="Longitude"
-        placeholder="Longitude"
-        required="required"
-      /><br />
-      <button type="submit" class="btn btn-primary btn-block btn-large">
-        Predict
-      </button>
-    </form>
-    <br />
-    <br />
-    <div>{{prediction_text}}</div>
+    <!-- Code the whole project so you will be able to learn the things that I have shown to the video: https://youtu.be/sqM6nsSXa64 -->
+
+    <section>
+      <div class="box">
+        <div class="form">
+          <div class="top">
+            <h3>Welcome to <span>house price prediction</span></h3>
+            <p>Welcome back! Enter the required values to predict the price</p>
+          </div>
+
+          <form action="{{url_for('predict')}}" method="post">
+            <div class="info">
+              <i class="fas fa-hand-holding-usd"></i>
+              <input
+                type="text"
+                name="MedInc"
+                id="MedInc"
+                placeholder="Median Income"
+                required="required"
+              />
+              <i class="fas fa-home"></i>
+              <input
+                type="text"
+                name="HouseAge"
+                id="HouseAge"
+                placeholder="Median House Age"
+                required="required"
+              />
+              <i class="fas fa-door-open"></i>
+              <input
+                type="text"
+                name="AveRooms"
+                id="AveRooms"
+                placeholder="Average Number of Rooms"
+                required="required"
+              />
+              <i class="fas fa-bed"></i>
+              <input
+                type="text"
+                name="AveBedrms"
+                id="AveBedrms"
+                placeholder="Average Number of Bedrooms"
+                required="required"
+              />
+              <i class="fas fa-users"></i>
+              <input
+                type="text"
+                name="Population"
+                id="Population"
+                placeholder="Population"
+                required="required"
+              />
+              <i class="fas fa-user-plus"></i>
+              <input
+                type="text"
+                name="AveOccup"
+                id="AveOccup"
+                placeholder="Average Number of Household Members"
+                required="required"
+              />
+              <i class="fas fa-globe"></i>
+              <input
+                type="text"
+                name="Latitude"
+                id="Latitude"
+                placeholder="Latitude"
+                required="required"
+              />
+              <i class="fas fa-globe-americas"></i>
+              <input
+                type="text"
+                name="Longitute"
+                id="Longitute"
+                placeholder="Longitute"
+                required="required"
+              />
+              <div class="action">
+                <button type="submit" class="btn">PREDICT</button>
+              </div>
+            </div>
+          </form>
+          <br />
+          <div style="text-align: center">{{prediction_text}}</div>
+        </div>
+        <div class="placeholder__img"></div>
+      </div>
+    </section>
   </body>
 </html>
